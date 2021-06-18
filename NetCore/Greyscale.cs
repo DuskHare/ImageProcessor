@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using ImageMagick;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Processing;
 using ImageSharpImage = SixLabors.ImageSharp.Image;
@@ -15,25 +13,14 @@ namespace ImageProcessing
     public class Greyscale
     {
         private const int Quality = 75;
-        private const string ImageSharp = nameof(ImageSharp);
-
-        // Set the quality for ImagSharp
+        private const string ImageSharp = nameof(ImageSharp);        
         private readonly JpegEncoder imageSharpJpegEncoder = new JpegEncoder { Quality = Quality };
-
         public IEnumerable<string> Images { get; }
         private readonly string outputDirectory;
-
         public const int ImagesCount = 12;
 
         public Greyscale()
         {
-            if (RuntimeInformation.OSArchitecture is Architecture.X86 or Architecture.X64)
-            {
-                // Workaround ImageMagick issue
-                OpenCL.IsEnabled = false;
-            }
-
-            // Find the closest images directory
             string imageDirectory = Path.GetFullPath(".");
             while (!Directory.Exists(Path.Combine(imageDirectory, "images")))
             {
@@ -46,10 +33,9 @@ namespace ImageProcessing
 
             imageDirectory = Path.Combine(imageDirectory, "images");
 
-            // Get at most 20 images from there
+            
             Images = Directory.EnumerateFiles(imageDirectory).Take(20);
 
-            // Create the output directory next to the images directory
             this.outputDirectory = Path.Combine(Path.GetDirectoryName(imageDirectory), "output");
             if (!Directory.Exists(this.outputDirectory))
             {
@@ -66,10 +52,6 @@ namespace ImageProcessing
                 + Path.GetExtension(inputPath));
         }
 
-        internal void ImageSharpBlur()
-        {
-            throw new NotImplementedException();
-        }
         
         public void ImageGrayscaleChoose()
         {
@@ -87,12 +69,8 @@ namespace ImageProcessing
               
                 using (var image = ImageSharpImage.Load(input))
                 {
-                    image.Mutate(i => i.Grayscale(1));
-
-                    // Reduce the size of the file
-                    image.Metadata.ExifProfile = null;
-
-                    // Save the results
+                    image.Mutate(i => i.Grayscale(1));                    
+                    image.Metadata.ExifProfile = null;                    
                     image.Save(output, imageSharpJpegEncoder);
                 }
             }

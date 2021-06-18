@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using ImageMagick;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Processing;
 using ImageSharpImage = SixLabors.ImageSharp.Image;
@@ -17,14 +15,9 @@ namespace ImageProcessing
         private const int Height = 853;
         private const int ResizedWidth = 150;
         private const int ResizedHeight = 99;
-
-
         private const int Quality = 75;
         private const string ImageSharp = nameof(ImageSharp);
-
-        // Set the quality for ImagSharp
         private readonly JpegEncoder imageSharpJpegEncoder = new JpegEncoder { Quality = Quality };
-
         public IEnumerable<string> Images { get; }
         private readonly string outputDirectory;
 
@@ -32,13 +25,7 @@ namespace ImageProcessing
 
         public Resize()
         {
-            if (RuntimeInformation.OSArchitecture is Architecture.X86 or Architecture.X64)
-            {
-                // Workaround ImageMagick issue
-                OpenCL.IsEnabled = false;
-            }
-
-            // Find the closest images directory
+            
             string imageDirectory = Path.GetFullPath(".");
             while (!Directory.Exists(Path.Combine(imageDirectory, "images")))
             {
@@ -50,11 +37,7 @@ namespace ImageProcessing
             }
 
             imageDirectory = Path.Combine(imageDirectory, "images");
-
-            // Get at most 20 images from there
             Images = Directory.EnumerateFiles(imageDirectory).Take(20);
-
-            // Create the output directory next to the images directory
             this.outputDirectory = Path.Combine(Path.GetDirectoryName(imageDirectory), "output");
             if (!Directory.Exists(this.outputDirectory))
             {
@@ -71,17 +54,12 @@ namespace ImageProcessing
                 + Path.GetExtension(inputPath));
         }
 
-        internal void ImageSharpBlur()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void ResizeImageSharpChoose()
         {
             foreach (string image in Images)
             {
                 ResizeImageSharp(image);
-
             }
         }
 
@@ -92,11 +70,7 @@ namespace ImageProcessing
                 using (var image = ImageSharpImage.Load(input))
                 {
                     image.Mutate(i => i.Resize(ResizedWidth, ResizedHeight, KnownResamplers.Bicubic));
-
-                    // Reduce the size of the file
                     image.Metadata.ExifProfile = null;
-
-                    // Save the results
                     image.Save(output, imageSharpJpegEncoder);
                 }
             }

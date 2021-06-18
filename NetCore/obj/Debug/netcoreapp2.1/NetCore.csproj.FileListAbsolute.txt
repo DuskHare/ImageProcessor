@@ -22,3 +22,14 @@ C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\n
 C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\obj\Debug\netcoreapp2.1\NetCore.dll
 C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\obj\Debug\netcoreapp2.1\NetCore.pdb
 C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\obj\Debug\netcoreapp2.1\NetCore.genruntimeconfig.cache
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\bin\Debug\netcoreapp2.1\NetCore.deps.json
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.json
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.dev.json
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\bin\Debug\netcoreapp2.1\NetCore.dll
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\bin\Debug\netcoreapp2.1\NetCore.pdb
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfoInputs.cache
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfo.cs
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\obj\Debug\netcoreapp2.1\NetCore.csproj.CoreCompileInputs.cache
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\obj\Debug\netcoreapp2.1\NetCore.dll
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\obj\Debug\netcoreapp2.1\NetCore.pdb
+C:\Users\Shaveen\Source\Repos\DuskHare\ImageProcessor\NetCore\obj\Debug\netcoreapp2.1\NetCore.genruntimeconfig.cache

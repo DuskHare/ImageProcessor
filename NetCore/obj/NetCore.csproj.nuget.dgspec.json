@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shaveen\\source\\repos\\core-imaging-playground-master\\NetCore\\NetCore.csproj": {}
+    "C:\\Users\\Shaveen\\Source\\Repos\\DuskHare\\ImageProcessor\\NetCore\\NetCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shaveen\\source\\repos\\core-imaging-playground-master\\NetCore\\NetCore.csproj": {
+    "C:\\Users\\Shaveen\\Source\\Repos\\DuskHare\\ImageProcessor\\NetCore\\NetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shaveen\\source\\repos\\core-imaging-playground-master\\NetCore\\NetCore.csproj",
+        "projectUniqueName": "C:\\Users\\Shaveen\\Source\\Repos\\DuskHare\\ImageProcessor\\NetCore\\NetCore.csproj",
         "projectName": "NetCore",
-        "projectPath": "C:\\Users\\Shaveen\\source\\repos\\core-imaging-playground-master\\NetCore\\NetCore.csproj",
+        "projectPath": "C:\\Users\\Shaveen\\Source\\Repos\\DuskHare\\ImageProcessor\\NetCore\\NetCore.csproj",
         "packagesPath": "C:\\Users\\Shaveen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shaveen\\source\\repos\\core-imaging-playground-master\\NetCore\\obj\\",
+        "outputPath": "C:\\Users\\Shaveen\\Source\\Repos\\DuskHare\\ImageProcessor\\NetCore\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -57,22 +57,6 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
-            "BenchmarkDotNet": {
-              "target": "Package",
-              "version": "[0.12.1.1514, )"
-            },
-            "BenchmarkDotNet.Diagnostics.Windows": {
-              "target": "Package",
-              "version": "[0.12.1.1514, )"
-            },
-            "FreeImage.Standard": {
-              "target": "Package",
-              "version": "[4.3.8, )"
-            },
-            "Magick.NET-Q8-AnyCPU": {
-              "target": "Package",
-              "version": "[7.23.2, )"
-            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -87,21 +71,9 @@
               "target": "Package",
               "version": "[8.10.5.1, )"
             },
-            "PhotoSauce.MagicScaler": {
-              "target": "Package",
-              "version": "[0.11.2, )"
-            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[1.0.3, )"
-            },
-            "SkiaSharp": {
-              "target": "Package",
-              "version": "[2.80.2, )"
-            },
-            "SkiaSharp.NativeAssets.Linux": {
-              "target": "Package",
-              "version": "[2.80.2, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
@@ -123,22 +95,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "BenchmarkDotNet": {
-              "target": "Package",
-              "version": "[0.12.1.1514, )"
-            },
-            "BenchmarkDotNet.Diagnostics.Windows": {
-              "target": "Package",
-              "version": "[0.12.1.1514, )"
-            },
-            "FreeImage.Standard": {
-              "target": "Package",
-              "version": "[4.3.8, )"
-            },
-            "Magick.NET-Q8-AnyCPU": {
-              "target": "Package",
-              "version": "[7.23.2, )"
-            },
             "NetVips": {
               "target": "Package",
               "version": "[1.2.4, )"
@@ -147,21 +103,9 @@
               "target": "Package",
               "version": "[8.10.5.1, )"
             },
-            "PhotoSauce.MagicScaler": {
-              "target": "Package",
-              "version": "[0.11.2, )"
-            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[1.0.3, )"
-            },
-            "SkiaSharp": {
-              "target": "Package",
-              "version": "[2.80.2, )"
-            },
-            "SkiaSharp.NativeAssets.Linux": {
-              "target": "Package",
-              "version": "[2.80.2, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
@@ -188,22 +132,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "BenchmarkDotNet": {
-              "target": "Package",
-              "version": "[0.12.1.1514, )"
-            },
-            "BenchmarkDotNet.Diagnostics.Windows": {
-              "target": "Package",
-              "version": "[0.12.1.1514, )"
-            },
-            "FreeImage.Standard": {
-              "target": "Package",
-              "version": "[4.3.8, )"
-            },
-            "Magick.NET-Q8-AnyCPU": {
-              "target": "Package",
-              "version": "[7.23.2, )"
-            },
             "NetVips": {
               "target": "Package",
               "version": "[1.2.4, )"
@@ -212,21 +140,9 @@
               "target": "Package",
               "version": "[8.10.5.1, )"
             },
-            "PhotoSauce.MagicScaler": {
-              "target": "Package",
-              "version": "[0.11.2, )"
-            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[1.0.3, )"
-            },
-            "SkiaSharp": {
-              "target": "Package",
-              "version": "[2.80.2, )"
-            },
-            "SkiaSharp.NativeAssets.Linux": {
-              "target": "Package",
-              "version": "[2.80.2, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
