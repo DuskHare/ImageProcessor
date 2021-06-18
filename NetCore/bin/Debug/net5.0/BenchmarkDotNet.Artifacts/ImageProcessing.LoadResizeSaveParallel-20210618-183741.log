@@ -1,0 +1,109 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore /p:DebugType=portable /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\a9f8e526-7a44-49ac-b4e3-36d9f8283391
+// command took 1.21s and exited with 0
+// start dotnet build -c Release /p:DebugType=portable --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\a9f8e526-7a44-49ac-b4e3-36d9f8283391
+// command took 2.87s and exited with 0
+// ***** Done, took 00:00:04 (4.23 sec)   *****
+// Found 8 benchmarks:
+//   LoadResizeSaveParallel.'System.Drawing Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'ImageSharp Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'ImageMagick Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'ImageFree Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'MagicScaler Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'SkiaSharp Canvas Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'SkiaSharp Bitmap Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSaveParallel.'NetVips Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+// **************************
+// Benchmark: LoadResizeSaveParallel.'System.Drawing Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "a9f8e526-7a44-49ac-b4e3-36d9f8283391.dll" --benchmarkName "ImageProcessing.LoadResizeSaveParallel.SystemDrawingBenchmarkParallel" --job ".Net 5.0 CLI" --benchmarkId 0 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\a9f8e526-7a44-49ac-b4e3-36d9f8283391\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 194700.00 ns, 194.7000 us/op
+WorkloadJitting  1: 1 op, 148156600.00 ns, 148.1566 ms/op
+
+WorkloadPilot    1: 2 op, 233528900.00 ns, 116.7644 ms/op
+WorkloadPilot    2: 3 op, 352252900.00 ns, 117.4176 ms/op
+WorkloadPilot    3: 4 op, 465702000.00 ns, 116.4255 ms/op
+WorkloadPilot    4: 5 op, 590512800.00 ns, 118.1026 ms/op
+
+WorkloadWarmup   1: 5 op, 593203800.00 ns, 118.6408 ms/op
+WorkloadWarmup   2: 5 op, 576234600.00 ns, 115.2469 ms/op
+WorkloadWarmup   3: 5 op, 574937900.00 ns, 114.9876 ms/op
+WorkloadWarmup   4: 5 op, 584319500.00 ns, 116.8639 ms/op
+WorkloadWarmup   5: 5 op, 589246300.00 ns, 117.8493 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 5 op, 588552100.00 ns, 117.7104 ms/op
+WorkloadActual   2: 5 op, 581155600.00 ns, 116.2311 ms/op
+WorkloadActual   3: 5 op, 573039900.00 ns, 114.6080 ms/op
+WorkloadActual   4: 5 op, 565544700.00 ns, 113.1089 ms/op
+WorkloadActual   5: 5 op, 571521400.00 ns, 114.3043 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 5 op, 588552100.00 ns, 117.7104 ms/op
+WorkloadResult   2: 5 op, 581155600.00 ns, 116.2311 ms/op
+WorkloadResult   3: 5 op, 573039900.00 ns, 114.6080 ms/op
+WorkloadResult   4: 5 op, 565544700.00 ns, 113.1089 ms/op
+WorkloadResult   5: 5 op, 571521400.00 ns, 114.3043 ms/op
+GC:  0 0 0 181968 5
+Threading:  67 60 5
+
+// AfterAll
+// Benchmark Process 37296 has exited with code 0
+
+Mean = 115.193 ms, StdErr = 0.803 ms (0.70%), N = 5, StdDev = 1.795 ms
+Min = 113.109 ms, Q1 = 114.304 ms, Median = 114.608 ms, Q3 = 116.231 ms, Max = 117.710 ms
+IQR = 1.927 ms, LowerFence = 111.414 ms, UpperFence = 119.121 ms
+ConfidenceInterval = [108.280 ms; 122.105 ms] (CI 99.9%), Margin = 6.913 ms (6.00% of Mean)
+Skewness = 0.25, Kurtosis = 1.17, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSaveParallel.'ImageSharp Load, Resize, Save - Parallel': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "a9f8e526-7a44-49ac-b4e3-36d9f8283391.dll" --benchmarkName "ImageProcessing.LoadResizeSaveParallel.ImageSharpBenchmarkParallel" --job ".Net 5.0 CLI" --benchmarkId 1 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\a9f8e526-7a44-49ac-b4e3-36d9f8283391\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 191400.00 ns, 191.4000 us/op
+WorkloadJitting  1: 1 op, 168948500.00 ns, 168.9485 ms/op
+
+WorkloadPilot    1: 2 op, 175679700.00 ns, 87.8398 ms/op
+WorkloadPilot    2: 3 op, 137488300.00 ns, 45.8294 ms/op
+WorkloadPilot    3: 4 op, 132923000.00 ns, 33.2308 ms/op
+WorkloadPilot    4: 5 op, 159252900.00 ns, 31.8506 ms/op
+WorkloadPilot    5: 6 op, 184425700.00 ns, 30.7376 ms/op
+WorkloadPilot    6: 7 op, 185543600.00 ns, 26.5062 ms/op
+WorkloadPilot    7: 8 op, 228328700.00 ns, 28.5411 ms/op
+WorkloadPilot    8: 9 op, 365877700.00 ns, 40.6531 ms/op
+WorkloadPilot    9: 10 op, 421148900.00 ns, 42.1149 ms/op
+WorkloadPilot   10: 11 op, 311776800.00 ns, 28.3433 ms/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.AggregateException: One or more errors occurred. (The process cannot access the file 'C:\Users\Shaveen\source\repos\core-imaging-playground-master\output\IMG_2351-ImageSharp.jpg' because it is being used by another process.)
+ ---> System.IO.IOException: The process cannot access the file 'C:\Users\Shaveen\source\repos\core-imaging-playground-master\output\IMG_2351-ImageSharp.jpg' because it is being used by another process.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at ImageProcessing.LoadResizeSave.ImageSharpResize(String input) in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\LoadResizeSave.cs:line 171
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass44_0`2.<PartitionerForEachWorker>b__1(IEnumerator& partitionState, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass44_0`2.<PartitionerForEachWorker>b__1(IEnumerator& partitionState, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.TaskReplicator.Run[TState](ReplicatableUserAction`1 action, ParallelOptions opt

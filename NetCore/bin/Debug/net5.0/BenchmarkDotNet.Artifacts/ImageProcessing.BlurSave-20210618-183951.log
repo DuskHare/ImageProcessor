@@ -1,0 +1,45 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore /p:DebugType=portable /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\59b1dc40-240b-43a5-9404-e4ea30129b5c
+// command took 1.19s and exited with 0
+// start dotnet build -c Release /p:DebugType=portable --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\59b1dc40-240b-43a5-9404-e4ea30129b5c
+// command took 2.16s and exited with 0
+// ***** Done, took 00:00:03 (3.48 sec)   *****
+// Found 1 benchmarks:
+//   BlurSave.'ImageSharp Load, Blur, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+// **************************
+// Benchmark: BlurSave.'ImageSharp Load, Blur, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "59b1dc40-240b-43a5-9404-e4ea30129b5c.dll" --benchmarkName "ImageProcessing.BlurSave.ImageSharpBenchmark" --job ".Net 5.0 CLI" --benchmarkId 0 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\59b1dc40-240b-43a5-9404-e4ea30129b5c\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 187900.00 ns, 187.9000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> SixLabors.ImageSharp.ImageProcessingException: An error occurred when processing the image using GaussianBlurProcessor`1. See the inner exception for more detail.
+ ---> SixLabors.ImageSharp.ImageProcessingException: An error occurred when processing the image using GaussianBlurProcessor`1. See the inner exception for more detail.
+ ---> SixLabors.ImageSharp.ImageProcessingException: An error occurred when processing the image using Convolution2PassProcessor`1. See the inner exception for more detail.
+ ---> System.ArgumentOutOfRangeException: Parameter "rectangle.Width" (System.Int32) must be greater than 0, was 0 (Parameter 'rectangle.Width')
+   at SixLabors.ThrowHelper.ThrowArgumentOutOfRangeException(String name, String message)
+   at SixLabors.ThrowHelper.ThrowArgumentOutOfRangeExceptionForMustBeGreaterThan[T](T value, T minimum, String name)
+   at SixLabors.ImageSharp.Advanced.ParallelRowIterator.ValidateRectangle(Rectangle rectangle)
+   at SixLabors.ImageSharp.Advanced.ParallelRowIterator.IterateRows[T,TBuffer](Rectangle rectangle, ParallelExecutionSettings& parallelSettings, T& operation)
+   at SixLabors.ImageSharp.Advanced.ParallelRowIterator.IterateRows[T,TBuffer](Configuration configuration, Rectangle rectangle, T& operation)
+   at SixLabors.ImageSharp.Processing.Processors.Convolution.Convolution2PassProcessor`1.OnFrameApply(ImageFrame`1 source)
+   at SixLabors.ImageSharp.Processing.Processors.ImageProcessor`1.Apply(ImageFrame`1 source)
+   --- End of inner exception stack trace ---
+   at SixLabors.ImageSharp.Processing.Processors.ImageProcessor`1.Apply(ImageFrame`1 source)
+   at SixLabors.ImageSharp.Processing.Processors.Convolution.GaussianBlurProcessor`1.OnFrameApply(ImageFrame`1 source)
+   at SixLabors.ImageSharp.Processing.Processors.ImageProcessor`1.Apply(ImageFrame`1 source)
+   --- End of inner exception stack trace ---
+   at SixLabors.ImageSharp.Processing.Processors.ImageProcessor`1.Apply(ImageFrame`1 source)
+   at SixLabors.ImageSharp.Processing.Processors.ImageProcessor`1.SixLabors.ImageSharp.Processing.Processors.IImageProcessor<TPi

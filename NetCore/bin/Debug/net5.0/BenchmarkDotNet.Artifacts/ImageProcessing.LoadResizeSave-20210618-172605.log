@@ -1,0 +1,544 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore /p:DebugType=portable /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659
+// command took 7.4s and exited with 0
+// start dotnet build -c Release /p:DebugType=portable --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659
+// command took 4.08s and exited with 0
+// ***** Done, took 00:00:11 (11.71 sec)   *****
+// Found 8 benchmarks:
+//   LoadResizeSave.'System.Drawing Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'ImageSharp Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'ImageMagick Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'ImageFree Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'MagicScaler Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'SkiaSharp Canvas Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'SkiaSharp Bitmap Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+//   LoadResizeSave.'NetVips Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+// **************************
+// Benchmark: LoadResizeSave.'System.Drawing Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.SystemDrawingBenchmark" --job ".Net 5.0 CLI" --benchmarkId 0 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 200900.00 ns, 200.9000 us/op
+WorkloadJitting  1: 1 op, 378767000.00 ns, 378.7670 ms/op
+
+WorkloadWarmup   1: 1 op, 382069300.00 ns, 382.0693 ms/op
+WorkloadWarmup   2: 1 op, 349232600.00 ns, 349.2326 ms/op
+WorkloadWarmup   3: 1 op, 326876400.00 ns, 326.8764 ms/op
+WorkloadWarmup   4: 1 op, 325492900.00 ns, 325.4929 ms/op
+WorkloadWarmup   5: 1 op, 322524700.00 ns, 322.5247 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 321132600.00 ns, 321.1326 ms/op
+WorkloadActual   2: 1 op, 325214300.00 ns, 325.2143 ms/op
+WorkloadActual   3: 1 op, 355057400.00 ns, 355.0574 ms/op
+WorkloadActual   4: 1 op, 327372500.00 ns, 327.3725 ms/op
+WorkloadActual   5: 1 op, 322163500.00 ns, 322.1635 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 321132600.00 ns, 321.1326 ms/op
+WorkloadResult   2: 1 op, 325214300.00 ns, 325.2143 ms/op
+WorkloadResult   3: 1 op, 327372500.00 ns, 327.3725 ms/op
+WorkloadResult   4: 1 op, 322163500.00 ns, 322.1635 ms/op
+GC:  0 0 0 12272 1
+Threading:  2 0 1
+
+// AfterAll
+// Benchmark Process 4456 has exited with code 0
+
+Mean = 323.971 ms, StdErr = 1.427 ms (0.44%), N = 4, StdDev = 2.854 ms
+Min = 321.133 ms, Q1 = 321.906 ms, Median = 323.689 ms, Q3 = 325.754 ms, Max = 327.373 ms
+IQR = 3.848 ms, LowerFence = 316.134 ms, UpperFence = 331.526 ms
+ConfidenceInterval = [305.527 ms; 342.415 ms] (CI 99.9%), Margin = 18.444 ms (5.69% of Mean)
+Skewness = 0.13, Kurtosis = 0.8, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'ImageSharp Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.ImageSharpBenchmark" --job ".Net 5.0 CLI" --benchmarkId 1 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 210600.00 ns, 210.6000 us/op
+WorkloadJitting  1: 1 op, 402337400.00 ns, 402.3374 ms/op
+
+WorkloadWarmup   1: 1 op, 133060800.00 ns, 133.0608 ms/op
+WorkloadWarmup   2: 1 op, 133044300.00 ns, 133.0443 ms/op
+WorkloadWarmup   3: 1 op, 132347500.00 ns, 132.3475 ms/op
+WorkloadWarmup   4: 1 op, 130259600.00 ns, 130.2596 ms/op
+WorkloadWarmup   5: 1 op, 130155400.00 ns, 130.1554 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 132075700.00 ns, 132.0757 ms/op
+WorkloadActual   2: 1 op, 130221900.00 ns, 130.2219 ms/op
+WorkloadActual   3: 1 op, 131852200.00 ns, 131.8522 ms/op
+WorkloadActual   4: 1 op, 130284700.00 ns, 130.2847 ms/op
+WorkloadActual   5: 1 op, 131873800.00 ns, 131.8738 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 132075700.00 ns, 132.0757 ms/op
+WorkloadResult   2: 1 op, 130221900.00 ns, 130.2219 ms/op
+WorkloadResult   3: 1 op, 131852200.00 ns, 131.8522 ms/op
+WorkloadResult   4: 1 op, 130284700.00 ns, 130.2847 ms/op
+WorkloadResult   5: 1 op, 131873800.00 ns, 131.8738 ms/op
+GC:  0 0 0 2037336 1
+Threading:  1 0 1
+
+// AfterAll
+// Benchmark Process 24400 has exited with code 0
+
+Mean = 131.262 ms, StdErr = 0.414 ms (0.32%), N = 5, StdDev = 0.925 ms
+Min = 130.222 ms, Q1 = 130.285 ms, Median = 131.852 ms, Q3 = 131.874 ms, Max = 132.076 ms
+IQR = 1.589 ms, LowerFence = 127.901 ms, UpperFence = 134.257 ms
+ConfidenceInterval = [127.700 ms; 134.823 ms] (CI 99.9%), Margin = 3.561 ms (2.71% of Mean)
+Skewness = -0.27, Kurtosis = 0.76, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'ImageMagick Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.MagickBenchmark" --job ".Net 5.0 CLI" --benchmarkId 2 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 186500.00 ns, 186.5000 us/op
+WorkloadJitting  1: 1 op, 396846500.00 ns, 396.8465 ms/op
+
+WorkloadWarmup   1: 1 op, 344693400.00 ns, 344.6934 ms/op
+WorkloadWarmup   2: 1 op, 349833100.00 ns, 349.8331 ms/op
+WorkloadWarmup   3: 1 op, 341022900.00 ns, 341.0229 ms/op
+WorkloadWarmup   4: 1 op, 349552800.00 ns, 349.5528 ms/op
+WorkloadWarmup   5: 1 op, 342924200.00 ns, 342.9242 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 351305700.00 ns, 351.3057 ms/op
+WorkloadActual   2: 1 op, 344082600.00 ns, 344.0826 ms/op
+WorkloadActual   3: 1 op, 357666300.00 ns, 357.6663 ms/op
+WorkloadActual   4: 1 op, 341841600.00 ns, 341.8416 ms/op
+WorkloadActual   5: 1 op, 341730700.00 ns, 341.7307 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 351305700.00 ns, 351.3057 ms/op
+WorkloadResult   2: 1 op, 344082600.00 ns, 344.0826 ms/op
+WorkloadResult   3: 1 op, 357666300.00 ns, 357.6663 ms/op
+WorkloadResult   4: 1 op, 341841600.00 ns, 341.8416 ms/op
+WorkloadResult   5: 1 op, 341730700.00 ns, 341.7307 ms/op
+GC:  0 0 0 55080 1
+Threading:  2 0 1
+
+// AfterAll
+// Benchmark Process 14744 has exited with code 0
+
+Mean = 347.325 ms, StdErr = 3.120 ms (0.90%), N = 5, StdDev = 6.976 ms
+Min = 341.731 ms, Q1 = 341.842 ms, Median = 344.083 ms, Q3 = 351.306 ms, Max = 357.666 ms
+IQR = 9.464 ms, LowerFence = 327.645 ms, UpperFence = 365.502 ms
+ConfidenceInterval = [320.463 ms; 374.188 ms] (CI 99.9%), Margin = 26.863 ms (7.73% of Mean)
+Skewness = 0.47, Kurtosis = 1.16, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'ImageFree Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.FreeImageBenchmark" --job ".Net 5.0 CLI" --benchmarkId 3 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 189900.00 ns, 189.9000 us/op
+WorkloadJitting  1: 1 op, 313361500.00 ns, 313.3615 ms/op
+
+WorkloadPilot    1: 2 op, 419615900.00 ns, 209.8080 ms/op
+WorkloadPilot    2: 3 op, 626282800.00 ns, 208.7609 ms/op
+
+WorkloadWarmup   1: 3 op, 621302700.00 ns, 207.1009 ms/op
+WorkloadWarmup   2: 3 op, 622472700.00 ns, 207.4909 ms/op
+WorkloadWarmup   3: 3 op, 657080700.00 ns, 219.0269 ms/op
+WorkloadWarmup   4: 3 op, 623254800.00 ns, 207.7516 ms/op
+WorkloadWarmup   5: 3 op, 622867900.00 ns, 207.6226 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 3 op, 623911300.00 ns, 207.9704 ms/op
+WorkloadActual   2: 3 op, 619112000.00 ns, 206.3707 ms/op
+WorkloadActual   3: 3 op, 626077500.00 ns, 208.6925 ms/op
+WorkloadActual   4: 3 op, 622701100.00 ns, 207.5670 ms/op
+WorkloadActual   5: 3 op, 620481700.00 ns, 206.8272 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 3 op, 623911300.00 ns, 207.9704 ms/op
+WorkloadResult   2: 3 op, 619112000.00 ns, 206.3707 ms/op
+WorkloadResult   3: 3 op, 626077500.00 ns, 208.6925 ms/op
+WorkloadResult   4: 3 op, 622701100.00 ns, 207.5670 ms/op
+WorkloadResult   5: 3 op, 620481700.00 ns, 206.8272 ms/op
+GC:  18 18 18 280080 3
+Threading:  2 0 3
+
+// AfterAll
+// Benchmark Process 28348 has exited with code 0
+
+Mean = 207.486 ms, StdErr = 0.411 ms (0.20%), N = 5, StdDev = 0.919 ms
+Min = 206.371 ms, Q1 = 206.827 ms, Median = 207.567 ms, Q3 = 207.970 ms, Max = 208.692 ms
+IQR = 1.143 ms, LowerFence = 205.112 ms, UpperFence = 209.685 ms
+ConfidenceInterval = [203.949 ms; 211.023 ms] (CI 99.9%), Margin = 3.537 ms (1.70% of Mean)
+Skewness = 0.05, Kurtosis = 1.1, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'MagicScaler Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.MagicScalerBenchmark" --job ".Net 5.0 CLI" --benchmarkId 4 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 189400.00 ns, 189.4000 us/op
+WorkloadJitting  1: 1 op, 218359700.00 ns, 218.3597 ms/op
+
+WorkloadPilot    1: 2 op, 133541200.00 ns, 66.7706 ms/op
+WorkloadPilot    2: 3 op, 199390200.00 ns, 66.4634 ms/op
+WorkloadPilot    3: 4 op, 271620100.00 ns, 67.9050 ms/op
+WorkloadPilot    4: 5 op, 333822100.00 ns, 66.7644 ms/op
+WorkloadPilot    5: 6 op, 397519800.00 ns, 66.2533 ms/op
+WorkloadPilot    6: 7 op, 647530400.00 ns, 92.5043 ms/op
+
+WorkloadWarmup   1: 7 op, 455984300.00 ns, 65.1406 ms/op
+WorkloadWarmup   2: 7 op, 460825600.00 ns, 65.8322 ms/op
+WorkloadWarmup   3: 7 op, 457966600.00 ns, 65.4238 ms/op
+WorkloadWarmup   4: 7 op, 455117800.00 ns, 65.0168 ms/op
+WorkloadWarmup   5: 7 op, 454732000.00 ns, 64.9617 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 7 op, 590717300.00 ns, 84.3882 ms/op
+WorkloadActual   2: 7 op, 459331600.00 ns, 65.6188 ms/op
+WorkloadActual   3: 7 op, 454069400.00 ns, 64.8671 ms/op
+WorkloadActual   4: 7 op, 448298000.00 ns, 64.0426 ms/op
+WorkloadActual   5: 7 op, 453384300.00 ns, 64.7692 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 7 op, 459331600.00 ns, 65.6188 ms/op
+WorkloadResult   2: 7 op, 454069400.00 ns, 64.8671 ms/op
+WorkloadResult   3: 7 op, 448298000.00 ns, 64.0426 ms/op
+WorkloadResult   4: 7 op, 453384300.00 ns, 64.7692 ms/op
+GC:  0 0 0 742680 7
+Threading:  2 0 7
+
+// AfterAll
+// Benchmark Process 6192 has exited with code 0
+
+Mean = 64.824 ms, StdErr = 0.322 ms (0.50%), N = 4, StdDev = 0.645 ms
+Min = 64.043 ms, Q1 = 64.588 ms, Median = 64.818 ms, Q3 = 65.055 ms, Max = 65.619 ms
+IQR = 0.467 ms, LowerFence = 63.886 ms, UpperFence = 65.756 ms
+ConfidenceInterval = [60.658 ms; 68.991 ms] (CI 99.9%), Margin = 4.167 ms (6.43% of Mean)
+Skewness = 0.02, Kurtosis = 1.12, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'SkiaSharp Canvas Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.SkiaCanvasBenchmark" --job ".Net 5.0 CLI" --benchmarkId 5 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 179400.00 ns, 179.4000 us/op
+WorkloadJitting  1: 1 op, 263928900.00 ns, 263.9289 ms/op
+
+WorkloadPilot    1: 2 op, 334292000.00 ns, 167.1460 ms/op
+WorkloadPilot    2: 3 op, 494750000.00 ns, 164.9167 ms/op
+WorkloadPilot    3: 4 op, 669800500.00 ns, 167.4501 ms/op
+
+WorkloadWarmup   1: 4 op, 659204700.00 ns, 164.8012 ms/op
+WorkloadWarmup   2: 4 op, 784831400.00 ns, 196.2079 ms/op
+WorkloadWarmup   3: 4 op, 671604300.00 ns, 167.9011 ms/op
+WorkloadWarmup   4: 4 op, 687437500.00 ns, 171.8594 ms/op
+WorkloadWarmup   5: 4 op, 685268000.00 ns, 171.3170 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 669898700.00 ns, 167.4747 ms/op
+WorkloadActual   2: 4 op, 678523500.00 ns, 169.6309 ms/op
+WorkloadActual   3: 4 op, 676484200.00 ns, 169.1210 ms/op
+WorkloadActual   4: 4 op, 702099400.00 ns, 175.5248 ms/op
+WorkloadActual   5: 4 op, 664585100.00 ns, 166.1463 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 4 op, 669898700.00 ns, 167.4747 ms/op
+WorkloadResult   2: 4 op, 678523500.00 ns, 169.6309 ms/op
+WorkloadResult   3: 4 op, 676484200.00 ns, 169.1210 ms/op
+WorkloadResult   4: 4 op, 664585100.00 ns, 166.1463 ms/op
+GC:  0 0 0 421720 4
+Threading:  2 0 4
+
+// AfterAll
+// Benchmark Process 39572 has exited with code 0
+
+Mean = 168.093 ms, StdErr = 0.796 ms (0.47%), N = 4, StdDev = 1.591 ms
+Min = 166.146 ms, Q1 = 167.143 ms, Median = 168.298 ms, Q3 = 169.249 ms, Max = 169.631 ms
+IQR = 2.106 ms, LowerFence = 163.984 ms, UpperFence = 172.407 ms
+ConfidenceInterval = [157.812 ms; 178.374 ms] (CI 99.9%), Margin = 10.281 ms (6.12% of Mean)
+Skewness = -0.18, Kurtosis = 0.83, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'SkiaSharp Bitmap Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.SkiaBitmapBenchmark" --job ".Net 5.0 CLI" --benchmarkId 6 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 177800.00 ns, 177.8000 us/op
+WorkloadJitting  1: 1 op, 195265600.00 ns, 195.2656 ms/op
+
+WorkloadPilot    1: 2 op, 338499000.00 ns, 169.2495 ms/op
+WorkloadPilot    2: 3 op, 497998200.00 ns, 165.9994 ms/op
+WorkloadPilot    3: 4 op, 662998200.00 ns, 165.7495 ms/op
+
+WorkloadWarmup   1: 4 op, 667670200.00 ns, 166.9176 ms/op
+WorkloadWarmup   2: 4 op, 668171800.00 ns, 167.0429 ms/op
+WorkloadWarmup   3: 4 op, 661508900.00 ns, 165.3772 ms/op
+WorkloadWarmup   4: 4 op, 700471200.00 ns, 175.1178 ms/op
+WorkloadWarmup   5: 4 op, 674086900.00 ns, 168.5217 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 672211500.00 ns, 168.0529 ms/op
+WorkloadActual   2: 4 op, 656884500.00 ns, 164.2211 ms/op
+WorkloadActual   3: 4 op, 656691600.00 ns, 164.1729 ms/op
+WorkloadActual   4: 4 op, 668926400.00 ns, 167.2316 ms/op
+WorkloadActual   5: 4 op, 658445200.00 ns, 164.6113 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 4 op, 672211500.00 ns, 168.0529 ms/op
+WorkloadResult   2: 4 op, 656884500.00 ns, 164.2211 ms/op
+WorkloadResult   3: 4 op, 656691600.00 ns, 164.1729 ms/op
+WorkloadResult   4: 4 op, 668926400.00 ns, 167.2316 ms/op
+WorkloadResult   5: 4 op, 658445200.00 ns, 164.6113 ms/op
+GC:  0 0 0 355776 4
+Threading:  2 0 4
+
+// AfterAll
+// Benchmark Process 6056 has exited with code 0
+
+Mean = 165.658 ms, StdErr = 0.824 ms (0.50%), N = 5, StdDev = 1.842 ms
+Min = 164.173 ms, Q1 = 164.221 ms, Median = 164.611 ms, Q3 = 167.232 ms, Max = 168.053 ms
+IQR = 3.010 ms, LowerFence = 159.705 ms, UpperFence = 171.747 ms
+ConfidenceInterval = [158.564 ms; 172.752 ms] (CI 99.9%), Margin = 7.094 ms (4.28% of Mean)
+Skewness = 0.33, Kurtosis = 0.86, MValue = 2
+
+// **************************
+// Benchmark: LoadResizeSave.'NetVips Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "908ad88d-4f0f-4304-be51-a020c3251659.dll" --benchmarkName "ImageProcessing.LoadResizeSave.NetVipsBenchmark" --job ".Net 5.0 CLI" --benchmarkId 7 in C:\Users\Shaveen\source\repos\core-imaging-playground-master\NetCore\bin\Debug\net5.0\908ad88d-4f0f-4304-be51-a020c3251659\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: .Net 5.0 CLI(IterationCount=5, LaunchCount=1, WarmupCount=5)
+
+OverheadJitting  1: 1 op, 189900.00 ns, 189.9000 us/op
+WorkloadJitting  1: 1 op, 295831900.00 ns, 295.8319 ms/op
+
+WorkloadPilot    1: 2 op, 289325700.00 ns, 144.6628 ms/op
+WorkloadPilot    2: 3 op, 430649400.00 ns, 143.5498 ms/op
+WorkloadPilot    3: 4 op, 567484400.00 ns, 141.8711 ms/op
+
+WorkloadWarmup   1: 4 op, 568405300.00 ns, 142.1013 ms/op
+WorkloadWarmup   2: 4 op, 745576000.00 ns, 186.3940 ms/op
+WorkloadWarmup   3: 4 op, 569233600.00 ns, 142.3084 ms/op
+WorkloadWarmup   4: 4 op, 571660500.00 ns, 142.9151 ms/op
+WorkloadWarmup   5: 4 op, 563928300.00 ns, 140.9821 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 560522100.00 ns, 140.1305 ms/op
+WorkloadActual   2: 4 op, 565968700.00 ns, 141.4922 ms/op
+WorkloadActual   3: 4 op, 567511000.00 ns, 141.8777 ms/op
+WorkloadActual   4: 4 op, 560854400.00 ns, 140.2136 ms/op
+WorkloadActual   5: 4 op, 553809500.00 ns, 138.4524 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 4 op, 560522100.00 ns, 140.1305 ms/op
+WorkloadResult   2: 4 op, 565968700.00 ns, 141.4922 ms/op
+WorkloadResult   3: 4 op, 567511000.00 ns, 141.8777 ms/op
+WorkloadResult   4: 4 op, 560854400.00 ns, 140.2136 ms/op
+WorkloadResult   5: 4 op, 553809500.00 ns, 138.4524 ms/op
+GC:  0 0 0 193152 4
+Threading:  2 0 4
+
+// AfterAll
+// Benchmark Process 18176 has exited with code 0
+
+Mean = 140.433 ms, StdErr = 0.603 ms (0.43%), N = 5, StdDev = 1.348 ms
+Min = 138.452 ms, Q1 = 140.131 ms, Median = 140.214 ms, Q3 = 141.492 ms, Max = 141.878 ms
+IQR = 1.362 ms, LowerFence = 138.088 ms, UpperFence = 143.535 ms
+ConfidenceInterval = [135.241 ms; 145.625 ms] (CI 99.9%), Margin = 5.192 ms (3.70% of Mean)
+Skewness = -0.29, Kurtosis = 1.27, MValue = 2
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\ImageProcessing.LoadResizeSave-report-github.md
+
+// * Detailed results *
+LoadResizeSave.'System.Drawing Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 323.971 ms, StdErr = 1.427 ms (0.44%), N = 4, StdDev = 2.854 ms
+Min = 321.133 ms, Q1 = 321.906 ms, Median = 323.689 ms, Q3 = 325.754 ms, Max = 327.373 ms
+IQR = 3.848 ms, LowerFence = 316.134 ms, UpperFence = 331.526 ms
+ConfidenceInterval = [305.527 ms; 342.415 ms] (CI 99.9%), Margin = 18.444 ms (5.69% of Mean)
+Skewness = 0.13, Kurtosis = 0.8, MValue = 2
+-------------------- Histogram --------------------
+[319.942 ms ; 329.732 ms) | @@@@
+---------------------------------------------------
+
+LoadResizeSave.'ImageSharp Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 131.262 ms, StdErr = 0.414 ms (0.32%), N = 5, StdDev = 0.925 ms
+Min = 130.222 ms, Q1 = 130.285 ms, Median = 131.852 ms, Q3 = 131.874 ms, Max = 132.076 ms
+IQR = 1.589 ms, LowerFence = 127.901 ms, UpperFence = 134.257 ms
+ConfidenceInterval = [127.700 ms; 134.823 ms] (CI 99.9%), Margin = 3.561 ms (2.71% of Mean)
+Skewness = -0.27, Kurtosis = 0.76, MValue = 2
+-------------------- Histogram --------------------
+[129.512 ms ; 132.786 ms) | @@@@@
+---------------------------------------------------
+
+LoadResizeSave.'ImageMagick Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 347.325 ms, StdErr = 3.120 ms (0.90%), N = 5, StdDev = 6.976 ms
+Min = 341.731 ms, Q1 = 341.842 ms, Median = 344.083 ms, Q3 = 351.306 ms, Max = 357.666 ms
+IQR = 9.464 ms, LowerFence = 327.645 ms, UpperFence = 365.502 ms
+ConfidenceInterval = [320.463 ms; 374.188 ms] (CI 99.9%), Margin = 26.863 ms (7.73% of Mean)
+Skewness = 0.47, Kurtosis = 1.16, MValue = 2
+-------------------- Histogram --------------------
+[341.164 ms ; 351.873 ms) | @@@@
+[351.873 ms ; 363.021 ms) | @
+---------------------------------------------------
+
+LoadResizeSave.'ImageFree Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 207.486 ms, StdErr = 0.411 ms (0.20%), N = 5, StdDev = 0.919 ms
+Min = 206.371 ms, Q1 = 206.827 ms, Median = 207.567 ms, Q3 = 207.970 ms, Max = 208.692 ms
+IQR = 1.143 ms, LowerFence = 205.112 ms, UpperFence = 209.685 ms
+ConfidenceInterval = [203.949 ms; 211.023 ms] (CI 99.9%), Margin = 3.537 ms (1.70% of Mean)
+Skewness = 0.05, Kurtosis = 1.1, MValue = 2
+-------------------- Histogram --------------------
+[205.666 ms ; 209.398 ms) | @@@@@
+---------------------------------------------------
+
+LoadResizeSave.'MagicScaler Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 64.824 ms, StdErr = 0.322 ms (0.50%), N = 4, StdDev = 0.645 ms
+Min = 64.043 ms, Q1 = 64.588 ms, Median = 64.818 ms, Q3 = 65.055 ms, Max = 65.619 ms
+IQR = 0.467 ms, LowerFence = 63.886 ms, UpperFence = 65.756 ms
+ConfidenceInterval = [60.658 ms; 68.991 ms] (CI 99.9%), Margin = 4.167 ms (6.43% of Mean)
+Skewness = 0.02, Kurtosis = 1.12, MValue = 2
+-------------------- Histogram --------------------
+[63.810 ms ; 66.152 ms) | @@@@
+---------------------------------------------------
+
+LoadResizeSave.'SkiaSharp Canvas Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 168.093 ms, StdErr = 0.796 ms (0.47%), N = 4, StdDev = 1.591 ms
+Min = 166.146 ms, Q1 = 167.143 ms, Median = 168.298 ms, Q3 = 169.249 ms, Max = 169.631 ms
+IQR = 2.106 ms, LowerFence = 163.984 ms, UpperFence = 172.407 ms
+ConfidenceInterval = [157.812 ms; 178.374 ms] (CI 99.9%), Margin = 10.281 ms (6.12% of Mean)
+Skewness = -0.18, Kurtosis = 0.83, MValue = 2
+-------------------- Histogram --------------------
+[164.831 ms ; 170.238 ms) | @@@@
+---------------------------------------------------
+
+LoadResizeSave.'SkiaSharp Bitmap Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 165.658 ms, StdErr = 0.824 ms (0.50%), N = 5, StdDev = 1.842 ms
+Min = 164.173 ms, Q1 = 164.221 ms, Median = 164.611 ms, Q3 = 167.232 ms, Max = 168.053 ms
+IQR = 3.010 ms, LowerFence = 159.705 ms, UpperFence = 171.747 ms
+ConfidenceInterval = [158.564 ms; 172.752 ms] (CI 99.9%), Margin = 7.094 ms (4.28% of Mean)
+Skewness = 0.33, Kurtosis = 0.86, MValue = 2
+-------------------- Histogram --------------------
+[162.759 ms ; 169.467 ms) | @@@@@
+---------------------------------------------------
+
+LoadResizeSave.'NetVips Load, Resize, Save': .Net 5.0 CLI(Arguments=/p:DebugType=portable, Toolchain=.NET 5.0, IterationCount=5, LaunchCount=1, WarmupCount=5)
+Runtime = .NET 5.0.7 (5.0.721.25508), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 140.433 ms, StdErr = 0.603 ms (0.43%), N = 5, StdDev = 1.348 ms
+Min = 138.452 ms, Q1 = 140.131 ms, Median = 140.214 ms, Q3 = 141.492 ms, Max = 141.878 ms
+IQR = 1.362 ms, LowerFence = 138.088 ms, UpperFence = 143.535 ms
+ConfidenceInterval = [135.241 ms; 145.625 ms] (CI 99.9%), Margin = 5.192 ms (3.70% of Mean)
+Skewness = -0.29, Kurtosis = 1.27, MValue = 2
+-------------------- Histogram --------------------
+[137.417 ms ; 142.414 ms) | @@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19043.1055 (21H1/May2021Update)
+11th Gen Intel Core i5-11600K 3.90GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=5.0.204
+  [Host]       : .NET 5.0.7 (5.0.721.25508), X64 RyuJIT  [AttachedDebugger]
+  .Net 5.0 CLI : .NET 5.0.7 (5.0.721.25508), X64 RyuJIT
+
+Job=.Net 5.0 CLI  Arguments=/p:DebugType=portable  Toolchain=.NET 5.0  
+IterationCount=5  LaunchCount=1  WarmupCount=5  
+
+|                                Method |      Mean |     Error |   StdDev | Ratio | RatioSD |     Gen 0 |     Gen 1 |     Gen 2 | Allocated |
+|-------------------------------------- |----------:|----------:|---------:|------:|--------:|----------:|----------:|----------:|----------:|
+|   'System.Drawing Load, Resize, Save' | 323.97 ms | 18.444 ms | 2.854 ms |  1.00 |    0.00 |         - |         - |         - |     12 KB |
+|       'ImageSharp Load, Resize, Save' | 131.26 ms |  3.561 ms | 0.925 ms |  0.40 |    0.00 |         - |         - |         - |  1,990 KB |
+|      'ImageMagick Load, Resize, Save' | 347.33 ms | 26.863 ms | 6.976 ms |  1.08 |    0.02 |         - |         - |         - |     54 KB |
+|        'ImageFree Load, Resize, Save' | 207.49 ms |  3.537 ms | 0.919 ms |  0.64 |    0.01 | 6000.0000 | 6000.0000 | 6000.0000 |     91 KB |
+|      'MagicScaler Load, Resize, Save' |  64.82 ms |  4.167 ms | 0.645 ms |  0.20 |    0.00 |         - |         - |         - |    104 KB |
+| 'SkiaSharp Canvas Load, Resize, Save' | 168.09 ms | 10.281 ms | 1.591 ms |  0.52 |    0.00 |         - |         - |         - |    103 KB |
+| 'SkiaSharp Bitmap Load, Resize, Save' | 165.66 ms |  7.094 ms | 1.842 ms |  0.51 |    0.01 |         - |         - |         - |     87 KB |
+|          'NetVips Load, Resize, Save' | 140.43 ms |  5.192 ms | 1.348 ms |  0.44 |    0.00 |         - |         - |         - |     47 KB |
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Ratio     : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD   : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Gen 2     : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:55 (55.07 sec), executed benchmarks: 8
+
+Global total time: 00:01:06 (66.79 sec), executed benchmarks: 8
+// * Artifacts cleanup *
